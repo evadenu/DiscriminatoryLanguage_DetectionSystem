@@ -88,8 +88,7 @@ indirect_regex = ["(?P<relstr>start-up\smentaliteit)",
                   "(?P<relstr>doorzettingsvermogen)",
                   "(?P<relstr>zuinigheid)",
                   "(?P<relstr>veranderende\s.{0,30}omstandigheden)",
-                  "(?P<relstr>aanpassingsvermogen)",
-                  
+                  "(?P<relstr>aanpassingsvermogen)"
                  ]
 
 def is_direct_regex(text):
