@@ -27,7 +27,10 @@ direct = ["(?P<relstr>integer)",
           "(?P<relstr>nederlandse\scultuur)",
           "(?P<relstr>\sneger\s)",
           "(?P<relstr>vrijdagmiddagborrel)",
-          "(?P<relstr>de\skroeg\sin)"]
+          "(?P<relstr>de\skroeg\sin)",
+           "(?P<relstr>zwart\s)",
+          "(?P<relstr>\swit\s)",
+          "(?P<relstr>black)"]
 
                     #Low powerdistance terms:
 indirect_regex = ["(?P<relstr>start-up\smentaliteit)",
