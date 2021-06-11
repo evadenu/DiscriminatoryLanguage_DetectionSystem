@@ -30,6 +30,8 @@ direct = ["(?P<relstr>integer)",
           "(?P<relstr>de\skroeg\sin)",
            "(?P<relstr>zwart\s)",
           "(?P<relstr>\swit\s)",
+          "(?P<relstr>\blonde\s)",
+          "(?P<relstr>\sblond\s)",
           "(?P<relstr>black)"]
 
                     #Low powerdistance terms:
