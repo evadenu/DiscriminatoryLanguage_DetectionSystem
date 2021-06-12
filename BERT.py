@@ -129,7 +129,7 @@ def main():
     predictions = run_classifier(train_set, test_set)
     
     #writing the predictions to a new file
-    test = pd.read_csv(args.test_set, encoding = 'utf-8', sep = ',')
+   
     test['prediction'] = predictions
     test.to_csv('data/predictions', sep = ',', index = False)
 
