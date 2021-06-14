@@ -4,17 +4,21 @@ import pickle
 import csv
 import re
 
-model = SentenceTransformer('paraphrase-distilroberta-base-v1')
+sbert_model = SentenceTransformer('paraphrase-xlm-r-multilingual-v1')
+#model = SentenceTransformer('paraphrase-distilroberta-base-v1')
+
 data = pd.read_pickle("../data/data_no_duplicate.pkl")
 sentences = [] 
 
+#20% of the data:
 for index, row in data.sample(100000).iterrows():
     sentences.append(row.text)
 
-
-paraphrases = util.paraphrase_mining(model, sentences)
+#paraphrases = util.paraphrase_mining(model, sentences)
+paraphrases = util.paraphrase_mining(sbert_model, sentences, show_progress_bar=True,top_k=15)
 
 print(f'{len(paraphrases)} sentence pairs were analysed')
+
 
 header = ["sentence_1", "sentence_2", "cosine_similarity"]
 
