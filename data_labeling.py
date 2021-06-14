@@ -4,7 +4,7 @@ from re import search
 import pandas as pd
 import numpy as np
 
-
+data = pd.read_pickle("../data/data_no_duplicate.pkl")
 sentences = data['text']
 discrimination_label = []
 
@@ -118,13 +118,6 @@ new_df['sentence'] = sentences
 new_df['discrimination_label'] = discrimination_label        
 
 
-with open(file, 'wb') as outfile:
+with open('data/discrimination_labels.pkl', 'wb') as outfile:
     pickle.dump(new_df, outfile)
 
-    
-def main():
-    data = pd.read_pickle("../data/data_no_duplicate.pkl")
-    file= 'data/discrimination_labels.pkl'
-    
-if __name__ == '__main__':
-    main()
