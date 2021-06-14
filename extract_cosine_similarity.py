@@ -8,13 +8,9 @@ model = SentenceTransformer('paraphrase-distilroberta-base-v1')
 data = pd.read_pickle("../data/data_no_duplicate.pkl")
 sentences = [] 
 
-for index, row in data.sample(90000).iterrows():
+for index, row in data.sample(100000).iterrows():
     sentences.append(row.text)
 
-#The following piece of code to define the sentences in the data would be more efficient
-#but raises an error for random indexes in the text
-
-# sentences = data['text']
 
 paraphrases = util.paraphrase_mining(model, sentences)
 
