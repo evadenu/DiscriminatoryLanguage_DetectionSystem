@@ -4,7 +4,7 @@ from re import search
 import pandas as pd
 import numpy as np
 
-data = pd.read_pickle("../data/data_no_duplicate.pkl")
+
 sentences = data['text']
 discrimination_label = []
 
@@ -123,7 +123,8 @@ with open(file, 'wb') as outfile:
 
     
 def main():
-    file='data/discrimination_labels.pkl'
+    data = pd.read_pickle("../data/data_no_duplicate.pkl")
+    file= 'data/discrimination_labels.pkl'
     
 if __name__ == '__main__':
     main()
