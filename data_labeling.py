@@ -118,7 +118,12 @@ new_df['sentence'] = sentences
 new_df['discrimination_label'] = discrimination_label        
 
 
-with open('data/discrimination_labels.pkl', 'wb') as outfile:
+with open(file, 'wb') as outfile:
     pickle.dump(new_df, outfile)
 
     
+def main():
+    file='data/discrimination_labels.pkl'
+    
+if __name__ == '__main__':
+    main()
