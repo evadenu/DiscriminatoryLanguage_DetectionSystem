@@ -38,3 +38,20 @@ with open ('data/sentence_similarity.tsv','wt') as csvfile:
         if score > 0.7:
             writer.writerow(rows)
         
+tsv_file = csv.reader(open('data/sentence_similarity.tsv', "r"), delimiter="\t")
+possible_discrimination = []
+
+for row in tsv_file:
+    sentence_1 = row[0]
+
+    if is_direct_regex(sentence_1):
+        possible_sentence = row[1]
+
+        if not is_direct_regex(possible_sentence):
+            possible_discrimination.append(possible_sentence)
+
+
+with open('data/to_be_annotated.tsv', 'w') as csvfile:
+    for line in possible_discrimination:
+        csvfile.write(line + '\n')
+
