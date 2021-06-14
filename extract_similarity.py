@@ -42,6 +42,37 @@ with open ('data/sentence_similarity.tsv','wt') as csvfile:
 tsv_file = csv.reader(open('data/sentence_similarity.tsv', "r"), delimiter="\t")
 possible_discrimination = []
 
+direct = ["(?P<relstr>integer)",
+          "(?P<relstr>betrouwbaar)",
+          "(?P<relstr>accentloos\s.{0,30}snederlands)",
+          "(?P<relstr>foutloos\s.{0,30}snederlands)",
+          "(?P<relstr>vlekkeloze\s.{0,30}sbeheersing)",
+          "(?P<relstr>native\sspeaker)",
+          "(?P<relstr>moedertaal)",
+          "(?P<relstr>representatief\s.{0,30}uiterlijk)",
+          "(?P<relstr>neutrale uitstraling)",
+          "(?P<relstr>verzorgd uiterlijk)",
+          "(?P<relstr>je\sziet\ser\sverzorgd\suit)",
+          "(?P<relstr>nederlandse\sachtergrond)",
+          "(?P<relstr>turkse\sachtergrond)",
+          "(?P<relstr>marokkaanse\sachtergrond)",
+          "(?P<relstr>nederlandse\scultuur)",
+          "(?P<relstr>westerse\scultuur)",
+          "(?P<relstr>nederlandse\scultuur)",
+          "(?P<relstr>\sneger\s)",
+          "(?P<relstr>vrijdagmiddagborrel)",
+          "(?P<relstr>de\skroeg\sin)",
+           "(?P<relstr>zwart\s)",
+          "(?P<relstr>\swit\s)",
+          "(?P<relstr>\blonde\s)",
+          "(?P<relstr>\sblond\s)",
+          "(?P<relstr>black)"]
+
+def is_direct_regex(text):
+    for reg in direct:
+        if re.search(reg, text)!=None:
+            return True
+
 for row in tsv_file:
     sentence_1 = row[0]
 
