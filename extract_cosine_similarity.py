@@ -15,6 +15,7 @@ for index, row in data.sample(100000).iterrows():
     sentences.append(row.text)
 
 #paraphrases = util.paraphrase_mining(model, sentences)
+#Top 15 for memory reasons
 paraphrases = util.paraphrase_mining(sbert_model, sentences, show_progress_bar=True,top_k=15)
 
 print(f'{len(paraphrases)} sentence pairs were analysed')
